@@ -21,7 +21,7 @@ GiangVien_collection = database["GiangVien"]
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb+srv://20520646:20520646@cluster0.ukwx1ww.mongodb.net/"
 mongo = PyMongo(app)
-CORS(app)
+
 @app.route('/')
 def home():
     return "Kinh Khung's database"
@@ -67,5 +67,5 @@ def get_date(date):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 if __name__ == "__main__":
-    app.run(debug= True, port= '3000', host= '0.0.0.0')
+    app.run(debug= True)
     
